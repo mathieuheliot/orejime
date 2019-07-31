@@ -1,10 +1,10 @@
 {
   "name": "orejime",
   "version": "1.1.1",
-  "description": "An easy to use consent manager that focuses on accessibility. A fork of Klaro!.",
+  "description": "An easy to use consent manager that focuses on accessibility. A fork of Orejime.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/empreinte-digitale/orejime.git"
+    "url": "git+https://github.com/mathieuheliot/orejime.git"
   },
   "keywords": [
     "cookie",
@@ -15,8 +15,7 @@
   "main": "lib/orejime.js",
   "module": "es/orejime.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development npm run umd -- --watch & npm run serve",
-    "serve": "browser-sync start -s --serveStatic dist -w -f dist/orejime.{css,js} --no-open",
+    "start": "webpack-dev-server --mode development",
     "cjs": "cross-env BABEL_ENV=cjs babel --out-dir lib src",
     "es": "cross-env BABEL_ENV=es babel --out-dir es src",
     "umd": "cross-env BABEL_ENV=umd webpack",
@@ -25,12 +24,12 @@
     "clean-build": "rm -Rf ./dist/orejime.{js,css,scss} && rm -Rf ./lib && rm -Rf ./es",
     "prepublishOnly": "npm run build"
   },
-  "author": "Emmanuel Pelletier <e.pelletier@empreintedigitale.fr>",
+  "author": "Mathieu Héliot <mathieu.heliot@gmail.com>",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/empreinte-digitale/orejime/issues"
+    "url": "https://github.com/mathieuheliot/orejime/issues"
   },
-  "homepage": "https://github.com/empreinte-digitale/orejime#readme",
+  "homepage": "https://github.com/mathieuheliot/orejime#readme",
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "react-modal": "^3.6.1"
@@ -52,7 +51,8 @@
     "preact-compat": "^3.18.2",
     "sass-loader": "^6.0.7",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.7.2"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16",

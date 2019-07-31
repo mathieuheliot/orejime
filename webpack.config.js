@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var packageInfo = require('./package.json');
 
+const ACTION = process.env.npm_lifecycle_event;
+
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname,'src');
 var IS_DEV = process.env.NODE_ENV === 'development';
@@ -61,6 +63,17 @@ var config = {
 
 if (IS_DEV) {
   config.devtool = 'inline-source-maps';
+}
+
+if (ACTION === 'start') {
+  config.devServer = {
+    contentBase: BUILD_DIR,
+    /* compress: true,
+    historyApiFallback: {
+        index: 'index.html' // Tell webpack dev server to serve index.html for any route
+    }, */
+    port: 3000
+  }
 }
 
 module.exports = config;
