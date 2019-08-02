@@ -445,7 +445,7 @@ $orejime-theme-color-light: #aaa !default;
 
         &:checked  + label {
 
-            &::before {
+            &:before {
                 background-color: $orejime-blue;
             }
 
@@ -453,6 +453,15 @@ $orejime-theme-color-light: #aaa !default;
                 -webkit-transform: translate(18px, -50%);
                 -ms-transform: translate(18px, -50%);
                 transform: translate(18px, -50%);
+            }
+        }
+
+        &:disabled + label {
+
+            cursor: default;
+
+            &:before {
+                opacity: 0.22;
             }
         }
     }

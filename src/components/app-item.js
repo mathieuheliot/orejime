@@ -32,7 +32,7 @@ export default class AppItem extends React.Component {
 
         const purposesEl = purposes.length > 0
             ? <p className={ns('app-purposes')}>
-                {t(['app', purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}
+                {purposesText}
             </p>
             : null
         const switchLabel = isChecked ? 'enabled' : 'disabled'

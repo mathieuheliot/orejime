@@ -29,9 +29,7 @@ export default class ConsentModal extends React.Component {
                             className={ns('modal-close')}
                             type="button"
                             onClick={onHideRequest}
-                        >
-                            <Close t={t} ns={ns} />
-                        </button>
+                        >Close</button>
                     }
 
                     <h1 className={ns('modal-title')} id="orejime-modal-title">{t(['consentModal', 'title'])}</h1>
