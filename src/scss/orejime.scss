@@ -161,7 +161,7 @@ $orejime-theme-color-light: #aaa !default;
     width: 100%;
 }
 
-.orejime-ModalOverlay,
+.modal,
 .orejime-NoticeOverlay {
     z-index: 1000;
     background: rgba(0,0,0,0.5);
@@ -172,7 +172,7 @@ $orejime-theme-color-light: #aaa !default;
     bottom: 0;
 }
 
-.orejime-ModalWrapper {
+.dialog {
     z-index: 1001;
     position: fixed;
     top: 50%;
@@ -183,13 +183,27 @@ $orejime-theme-color-light: #aaa !default;
     max-width: 100%;
     max-height: 100%;
     overflow: auto;
-}
 
- .orejime-Modal {
-    background: $orejime-theme-bg;
-    color: $orejime-theme-color;
-    border-radius: $orejime-border-radius;
-    box-shadow: $orejime-box-shadow;
+    &__content {
+        background: $orejime-theme-bg;
+        color: $orejime-theme-color;
+        border-radius: $orejime-border-radius;
+        box-shadow: $orejime-box-shadow;
+    }
+
+    &__header {
+        padding: 1em;
+        border-bottom: $orejime-theme-border;
+    }
+
+    &__body {
+        padding: 1em;
+    }
+
+    &__footer {
+        padding: 1em;
+        border-top: $orejime-theme-border;
+    }
 }
 
 .orejime-Modal-header {
@@ -219,17 +233,8 @@ $orejime-theme-color-light: #aaa !default;
     width: 12px;
 }
 
-.orejime-Modal-body {
-    padding: 1em;
-}
+.orejime-Modal-privacyPolicyLink {
 
-.orejime-Modal-footer {
-    padding: 1em;
-    border-top: $orejime-theme-border;
-}
-
-.orejime-Modal-privacyPolicyLink,
-.orejime-Modal-poweredByLink {
     cursor: pointer;
     text-decoration: underline;
     color: inherit;
@@ -243,20 +248,6 @@ $orejime-theme-color-light: #aaa !default;
     &:hover,
     &:focus {
         text-decoration: none;
-    }
-}
-
-.orejime-Modal-poweredByLink {
-    position: absolute;
-    right: 1em;
-    color: $orejime-theme-color-light;
-    font-size: 0.8em;
-    padding: 6px 0;
-
-    &:hover,
-    &:focus,
-    &:active {
-        color: $orejime-theme-color-light;
     }
 }
 

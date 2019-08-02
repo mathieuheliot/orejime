@@ -37,15 +37,15 @@ function (_React$Component) {
           'labelledby': 'orejime-modal-title'
         },
         portalClassName: ns('ModalPortal'),
-        overlayClassName: ns('ModalOverlay'),
-        className: ns('ModalWrapper'),
+        overlayClassName: "modal",
+        className: "dialog",
         config: config,
         onRequestClose: onHideRequest,
         role: isAlert ? 'alertdialog' : 'dialog'
       }, React.createElement("div", {
-        className: ns('Modal')
+        className: "dialog__content"
       }, React.createElement("div", {
-        className: ns('Modal-header')
+        className: 'dialog__header'
       }, !isAlert && React.createElement("button", {
         title: t(['close']),
         className: ns('Modal-closeButton'),
@@ -73,7 +73,7 @@ function (_React$Component) {
           href: config.privacyPolicy
         }, t(['consentModal', 'privacyPolicy', 'name']))
       }))), React.createElement("form", {
-        className: ns('Modal-form')
+        className: "dialog__body"
       }, React.createElement("div", {
         className: ns('Modal-body')
       }, React.createElement(Apps, {
@@ -87,7 +87,13 @@ function (_React$Component) {
         className: ns('Button Button--save Modal-saveButton'),
         onClick: onSaveRequest,
         title: t(['saveData'])
-      }, t(['save']))))));
+      }, t(['save'])))), React.createElement("div", {
+        className: "dialog__footer"
+      }, React.createElement("button", {
+        className: ns('Button Button--save Modal-saveButton'),
+        onClick: onSaveRequest,
+        title: t(['saveData'])
+      }, t(['save'])))));
     }
   }]);
 

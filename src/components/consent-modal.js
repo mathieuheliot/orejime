@@ -13,14 +13,16 @@ export default class ConsentModal extends React.Component {
             isOpen={isOpen}
             aria={{'labelledby': 'orejime-modal-title'}}
             portalClassName={ns('ModalPortal')}
-            overlayClassName={ns('ModalOverlay')}
-            className={ns('ModalWrapper')}
+            overlayClassName="modal"
+            className="dialog"
             config={config}
             onRequestClose={onHideRequest}
             role={isAlert ? 'alertdialog' : 'dialog'}
         >
-            <div className={ns('Modal')}>
-                <div className={ns('Modal-header')}>
+
+            <div className="dialog__content">
+
+                <div className={'dialog__header'}>
                     {!isAlert &&
                         <button
                             title={t(['close'])}
@@ -52,8 +54,8 @@ export default class ConsentModal extends React.Component {
                         })}
                     </p>
                 </div>
-
-                <form className={ns('Modal-form')}>
+                
+                <form className="dialog__body">
                     <div className={ns('Modal-body')}>
                         <Apps t={t} ns={ns} config={config} manager={manager} />
                     </div>
@@ -67,6 +69,17 @@ export default class ConsentModal extends React.Component {
                         </button>
                     </div>
                 </form>
+
+                <div className="dialog__footer">
+                    <button
+                        className={ns('Button Button--save Modal-saveButton')}
+                        onClick={onSaveRequest}
+                        title={t(['saveData'])}
+                    >
+                        {t(['save'])}
+                    </button>
+                </div>
+
             </div>
         </Dialog>
     }
