@@ -48,7 +48,7 @@ function (_React$Component) {
           overlayClassName: isVisible ? 'modal modal--drawer visible' : 'modal modal--drawer',
           className: "drawer"
         }), React.createElement("div", {
-          class: "drawer__body"
+          class: "drawer__content"
         }, React.createElement(ConsentNotice, props)));
       }
 
