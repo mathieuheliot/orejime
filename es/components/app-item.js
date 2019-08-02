@@ -51,7 +51,7 @@ function (_React$Component) {
       }, t(['app', 'required', 'title'])) : '';
       var purposesEl = purposes.length > 0 ? React.createElement("p", {
         className: ns('app-purposes')
-      }, t(['app', purposes.length > 1 ? 'purposes' : 'purpose']), ": ", purposesText) : null;
+      }, purposesText) : null;
       var switchLabel = isChecked ? 'enabled' : 'disabled';
       return React.createElement("div", {
         className: ns('app')

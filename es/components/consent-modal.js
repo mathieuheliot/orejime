@@ -51,10 +51,7 @@ function (_React$Component) {
         className: ns('modal-close'),
         type: "button",
         onClick: onHideRequest
-      }, React.createElement(Close, {
-        t: t,
-        ns: ns
-      })), React.createElement("h1", {
+      }, "Close"), React.createElement("h1", {
         className: ns('modal-title'),
         id: "orejime-modal-title"
       }, t(['consentModal', 'title'])), React.createElement("p", {

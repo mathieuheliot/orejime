@@ -329,10 +329,14 @@
       background-color: white;
       border-radius: 100px;
       box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19); }
-    .switch > input[type=checkbox]:checked + label::before {
+    .switch > input[type=checkbox]:checked + label:before {
       background-color: #057EB6; }
     .switch > input[type=checkbox]:checked + label:after {
       -webkit-transform: translate(18px, -50%);
       -ms-transform: translate(18px, -50%);
       transform: translate(18px, -50%); }
+    .switch > input[type=checkbox]:disabled + label {
+      cursor: default; }
+      .switch > input[type=checkbox]:disabled + label:before {
+        opacity: 0.22; }
 
