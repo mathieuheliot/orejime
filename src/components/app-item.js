@@ -15,7 +15,7 @@ export default class AppItem extends React.Component {
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
         const optOutText = optOut
             ? <span
-                className={ns('AppItem-optOut')}
+                className={ns('app-optOut')}
                 title={t(['app', 'optOut', 'description'])}
             >
                 {t(['app', 'optOut', 'title'])}
@@ -23,7 +23,7 @@ export default class AppItem extends React.Component {
             : ''
         const requiredText = required
             ? <span
-                className={ns('AppItem-required')}
+                className={ns('app-required')}
                 title={t(['app', 'required', 'description'])}
             >
                 {t(['app', 'required', 'title'])}
@@ -31,35 +31,29 @@ export default class AppItem extends React.Component {
             : ''
 
         const purposesEl = purposes.length > 0
-            ? <p className={ns('AppItem-purposes')}>
+            ? <p className={ns('app-purposes')}>
                 {t(['app', purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}
             </p>
             : null
         const switchLabel = isChecked ? 'enabled' : 'disabled'
-        return <div className={ns('AppItem')}>
-            <input
-                id={id}
-                className={ns('AppItem-input')}
-                aria-describedby={`${id}-description`}
-                disabled={required}
-                checked={isChecked}
-                type="checkbox"
-                onChange={onChange}
-            />
-            <label
-                htmlFor={id}
-                className={ns('AppItem-label')}
-                {...(required ? {tabIndex: "0"} : {})}
-            >
-                <span className={ns('AppItem-title')}>{title}</span>{requiredText}{optOutText}
-                <span className={ns(`AppItem-switch ${required ? 'AppItem-switch--disabled' : ''}`)}>
-                    <div className={ns('AppItem-slider')}></div>
-                    <div aria-hidden="true" className={ns('AppItem-switchLabel')}>{t(switchLabel)}</div>
-                </span>
-            </label>
-            <div id={`${id}-description`} className={ns('AppItem-fullDescription')}>
-                <p className={ns('AppItem-description')}>{description || t([name, 'description'])}</p>
-                {purposesEl}
+        return <div className={ns('app')}>
+            <div className="switch">
+                <input
+                    id={id}
+                    aria-describedby={`${id}-description`}
+                    disabled={required}
+                    checked={isChecked}
+                    type="checkbox"
+                    onChange={onChange}
+                />
+                <label
+                    htmlFor={id}
+                    {...(required ? {tabIndex: "0"} : {})}
+                >
+                    <div className={ns('app-title')}>{title}{requiredText}{optOutText}</div>
+                    <div class="app-description">{description || t([name, 'description'])}</div>
+                    {purposesEl}
+                </label>
             </div>
         </div>
     }

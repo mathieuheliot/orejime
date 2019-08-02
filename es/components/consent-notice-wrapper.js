@@ -45,9 +45,11 @@ function (_React$Component) {
         }, ariaProp, {
           config: this.props.config,
           portalClassName: this.props.ns('NoticePortal'),
-          overlayClassName: isVisible ? 'modal visible' : 'modal',
-          className: "canvas"
-        }), React.createElement(ConsentNotice, props));
+          overlayClassName: isVisible ? 'modal modal--drawer visible' : 'modal modal--drawer',
+          className: "drawer"
+        }), React.createElement("div", {
+          class: "drawer__body"
+        }, React.createElement(ConsentNotice, props)));
       }
 
       return React.createElement(ConsentNotice, props);

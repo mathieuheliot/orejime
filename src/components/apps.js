@@ -44,7 +44,7 @@ export default class Apps extends React.Component {
                 toggle([app], value)
             }
             const checked = consents[app.name]
-            return <li key={`app-${app.name}`} className={ns(`AppList-item AppList-item--${app.name}`)}>
+            return <li key={`app-${app.name}`} className={ns(`apps__list__item apps__list__item--${app.name}`)}>
                 <AppItem
                     checked={checked || app.required}
                     onToggle={toggleApp}
@@ -63,11 +63,11 @@ export default class Apps extends React.Component {
             return consents[app.name]
         }).length === apps.length
 
-        return <div>
-            <div className={ns('AppToggles')}>
+        return <div className={ns('apps')}>
+            <div className={ns('apps__toggles')}>
                 <button
                     type="button"
-                    className={ns('Button Button--info AppToggles-button AppToggles-enableAll')}
+                    className="button button--default"
                     disabled={allEnabled}
                     onClick={enableAll}
                 >
@@ -75,14 +75,14 @@ export default class Apps extends React.Component {
                 </button>
                 <button
                     type="button"
-                    className={ns('Button Button--info AppToggles-button AppToggles-disableAll')}
+                    className="button button--default"
                     disabled={allDisabled}
                     onClick={disableAll}
                 >
                     {t(['declineAll'])}
                 </button>
             </div>
-            <ul className={ns('AppList')}>
+            <ul className={ns('apps__list')}>
                 {appItems}
             </ul>
         </div>

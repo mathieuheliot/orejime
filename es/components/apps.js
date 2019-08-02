@@ -78,7 +78,7 @@ function (_React$Component) {
         var checked = consents[app.name];
         return React.createElement("li", {
           key: "app-".concat(app.name),
-          className: ns("AppList-item AppList-item--".concat(app.name))
+          className: ns("apps__list__item apps__list__item--".concat(app.name))
         }, React.createElement(AppItem, _extends({
           checked: checked || app.required,
           onToggle: toggleApp,
@@ -92,20 +92,22 @@ function (_React$Component) {
       var allEnabled = apps.filter(function (app) {
         return consents[app.name];
       }).length === apps.length;
-      return React.createElement("div", null, React.createElement("div", {
-        className: ns('AppToggles')
+      return React.createElement("div", {
+        className: ns('apps')
+      }, React.createElement("div", {
+        className: ns('apps__toggles')
       }, React.createElement("button", {
         type: "button",
-        className: ns('Button Button--info AppToggles-button AppToggles-enableAll'),
+        className: "button button--default",
         disabled: allEnabled,
         onClick: enableAll
       }, t(['acceptAll'])), React.createElement("button", {
         type: "button",
-        className: ns('Button Button--info AppToggles-button AppToggles-disableAll'),
+        className: "button button--default",
         disabled: allDisabled,
         onClick: disableAll
       }, t(['declineAll']))), React.createElement("ul", {
-        className: ns('AppList')
+        className: ns('apps__list')
       }, appItems));
     }
   }]);

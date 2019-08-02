@@ -42,47 +42,37 @@ function (_React$Component) {
         return t(['purposes', purpose]);
       }).join(", ");
       var optOutText = optOut ? React.createElement("span", {
-        className: ns('AppItem-optOut'),
+        className: ns('app-optOut'),
         title: t(['app', 'optOut', 'description'])
       }, t(['app', 'optOut', 'title'])) : '';
       var requiredText = required ? React.createElement("span", {
-        className: ns('AppItem-required'),
+        className: ns('app-required'),
         title: t(['app', 'required', 'description'])
       }, t(['app', 'required', 'title'])) : '';
       var purposesEl = purposes.length > 0 ? React.createElement("p", {
-        className: ns('AppItem-purposes')
+        className: ns('app-purposes')
       }, t(['app', purposes.length > 1 ? 'purposes' : 'purpose']), ": ", purposesText) : null;
       var switchLabel = isChecked ? 'enabled' : 'disabled';
       return React.createElement("div", {
-        className: ns('AppItem')
+        className: ns('app')
+      }, React.createElement("div", {
+        className: "switch"
       }, React.createElement("input", {
         id: id,
-        className: ns('AppItem-input'),
         "aria-describedby": "".concat(id, "-description"),
         disabled: required,
         checked: isChecked,
         type: "checkbox",
         onChange: onChange
       }), React.createElement("label", _extends({
-        htmlFor: id,
-        className: ns('AppItem-label')
+        htmlFor: id
       }, required ? {
         tabIndex: "0"
-      } : {}), React.createElement("span", {
-        className: ns('AppItem-title')
-      }, title), requiredText, optOutText, React.createElement("span", {
-        className: ns("AppItem-switch ".concat(required ? 'AppItem-switch--disabled' : ''))
-      }, React.createElement("div", {
-        className: ns('AppItem-slider')
-      }), React.createElement("div", {
-        "aria-hidden": "true",
-        className: ns('AppItem-switchLabel')
-      }, t(switchLabel)))), React.createElement("div", {
-        id: "".concat(id, "-description"),
-        className: ns('AppItem-fullDescription')
-      }, React.createElement("p", {
-        className: ns('AppItem-description')
-      }, description || t([name, 'description'])), purposesEl));
+      } : {}), React.createElement("div", {
+        className: ns('app-title')
+      }, title, requiredText, optOutText), React.createElement("div", {
+        class: "app-description"
+      }, description || t([name, 'description'])), purposesEl)));
     }
   }]);
 

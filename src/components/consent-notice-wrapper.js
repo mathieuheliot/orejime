@@ -19,10 +19,12 @@ export default class ConsentNoticeWrapper extends React.Component {
                 {...ariaProp}
                 config={this.props.config}
                 portalClassName={this.props.ns('NoticePortal')}
-                overlayClassName={isVisible ? 'modal visible' : 'modal'}
-                className="canvas"
+                overlayClassName={isVisible ? 'modal modal--drawer visible' : 'modal modal--drawer'}
+                className="drawer"
             >
-                <ConsentNotice {...props} />
+                <div class="drawer__body">
+                    <ConsentNotice {...props} />
+                </div>
             </Dialog>
         }
         return <ConsentNotice {...props} />

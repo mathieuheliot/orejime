@@ -38,54 +38,54 @@ function (_React$Component) {
       var title = t(['consentNotice', 'title']);
       return React.createElement("div", {
         "aria-hidden": isModalVisible,
-        className: ns("Notice".concat(isMandatory ? ' Notice--mandatory' : ''))
-      }, React.createElement("div", {
-        className: ns('Notice-body')
+        className: ns("notice".concat(isMandatory ? ' notice--mandatory' : ''))
       }, config.logo && React.createElement("div", {
-        className: ns('Notice-logoContainer')
+        className: ns('notice__logo')
       }, React.createElement("img", {
         src: _typeof(config.logo) == 'object' ? config.logo.src : config.logo,
         alt: _typeof(config.logo) == 'object' && config.logo.alt ? config.logo.alt : '',
         className: ns('Notice-logo')
       })), React.createElement("div", {
-        className: ns('Notice-text')
+        className: ns('notice__body')
+      }, React.createElement("div", {
+        className: ns('notice__body__text')
       }, title && React.createElement("h1", {
-        className: ns('Notice-title'),
+        className: ns('notice-title'),
         id: "orejime-notice-title"
       }, title), React.createElement("p", {
-        className: ns('Notice-description')
+        className: ns('notice-description')
       }, t(['consentNotice', 'description'], {
         purposes: React.createElement("strong", {
           key: "purposes",
-          className: ns('Notice-purposes')
+          className: ns('notice-purposes')
         }, purposesText)
       }), t(['consentNotice', 'privacyPolicy', 'text'], {
         privacyPolicy: React.createElement("a", {
           key: "privacyPolicyLink",
-          className: ns('Notice-privacyPolicyLink'),
+          className: ns('notice-link'),
           href: config.privacyPolicy
         }, t(['consentNotice', 'privacyPolicy', 'name']))
       }))), manager.changed && React.createElement("p", {
-        className: ns('Notice-changes')
+        className: ns('notice-changes')
       }, t(['consentNotice', 'changeDescription'])), React.createElement("ul", {
-        className: ns('Notice-actions')
+        className: ns('notice__actions')
       }, React.createElement("li", {
-        className: ns('Notice-actionItem Notice-actionItem--save')
+        className: ns('notice__actions__item notice__actions__item--save')
       }, React.createElement("button", {
-        className: ns('Button Button--save Notice-button Notice-saveButton'),
+        className: "button button--primary",
         type: "button",
         onClick: onSaveRequest
       }, t(['accept']))), React.createElement("li", {
-        className: ns('Notice-actionItem Notice-actionItem--decline')
+        className: ns('notice__actions__item notice__actions__item--decline')
       }, React.createElement("button", {
-        className: ns('Button Button--decline Notice-button Notice-declineButton'),
+        className: "button button--default",
         type: "button",
         onClick: onDeclineRequest
       }, t(['decline']))), React.createElement("li", {
-        className: ns('Notice-actionItem Notice-actionItem--info')
+        className: ns('notice__actions__item notice__actions__item--info')
       }, React.createElement("button", {
         type: "button",
-        className: ns('Button Button--info Notice-learnMoreButton'),
+        className: "button button--default",
         onClick: onConfigRequest
       }, t(['consentNotice', 'learnMore']))))));
     }

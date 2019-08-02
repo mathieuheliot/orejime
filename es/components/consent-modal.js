@@ -48,49 +48,43 @@ function (_React$Component) {
         className: 'dialog__header'
       }, !isAlert && React.createElement("button", {
         title: t(['close']),
-        className: ns('Modal-closeButton'),
+        className: ns('modal-close'),
         type: "button",
         onClick: onHideRequest
       }, React.createElement(Close, {
         t: t,
         ns: ns
       })), React.createElement("h1", {
-        className: ns('Modal-title'),
+        className: ns('modal-title'),
         id: "orejime-modal-title"
       }, t(['consentModal', 'title'])), React.createElement("p", {
-        className: ns('Modal-description')
+        className: ns('modal-description')
       }, manager.changed && (config.mustConsent || config.noNotice) && React.createElement("p", {
-        className: ns('Modal-description')
+        className: ns('modal-description')
       }, React.createElement("strong", {
         className: ns('Modal-changes')
       }, t(['consentNotice', 'changeDescription']))), t(['consentModal', 'description']), "\xA0", t(['consentModal', 'privacyPolicy', 'text'], {
         privacyPolicy: React.createElement("a", {
           key: "privacyPolicyLink",
-          className: ns('Modal-privacyPolicyLink'),
+          className: "link",
           onClick: function onClick(e) {
             onHideRequest();
           },
           href: config.privacyPolicy
         }, t(['consentModal', 'privacyPolicy', 'name']))
-      }))), React.createElement("form", {
+      }))), React.createElement("div", {
         className: "dialog__body"
-      }, React.createElement("div", {
-        className: ns('Modal-body')
+      }, React.createElement("form", {
+        className: ns('form')
       }, React.createElement(Apps, {
         t: t,
         ns: ns,
         config: config,
         manager: manager
-      })), React.createElement("div", {
-        className: ns('Modal-footer')
-      }, React.createElement("button", {
-        className: ns('Button Button--save Modal-saveButton'),
-        onClick: onSaveRequest,
-        title: t(['saveData'])
-      }, t(['save'])))), React.createElement("div", {
+      }))), React.createElement("div", {
         className: "dialog__footer"
       }, React.createElement("button", {
-        className: ns('Button Button--save Modal-saveButton'),
+        className: "button button--primary",
         onClick: onSaveRequest,
         title: t(['saveData'])
       }, t(['save'])))));

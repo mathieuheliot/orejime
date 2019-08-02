@@ -26,7 +26,7 @@ export default class ConsentModal extends React.Component {
                     {!isAlert &&
                         <button
                             title={t(['close'])}
-                            className={ns('Modal-closeButton')}
+                            className={ns('modal-close')}
                             type="button"
                             onClick={onHideRequest}
                         >
@@ -34,10 +34,10 @@ export default class ConsentModal extends React.Component {
                         </button>
                     }
 
-                    <h1 className={ns('Modal-title')} id="orejime-modal-title">{t(['consentModal', 'title'])}</h1>
-                    <p className={ns('Modal-description')}>
+                    <h1 className={ns('modal-title')} id="orejime-modal-title">{t(['consentModal', 'title'])}</h1>
+                    <p className={ns('modal-description')}>
                         {manager.changed && (config.mustConsent || config.noNotice) &&
-                            <p className={ns('Modal-description')}>
+                            <p className={ns('modal-description')}>
                                 <strong className={ns('Modal-changes')}>{t(['consentNotice', 'changeDescription'])}</strong>
                             </p>
                         }
@@ -45,7 +45,7 @@ export default class ConsentModal extends React.Component {
                         {t(['consentModal','privacyPolicy','text'], {
                             privacyPolicy : <a
                                 key="privacyPolicyLink"
-                                className={ns('Modal-privacyPolicyLink')}
+                                className="link"
                                 onClick={(e) => {onHideRequest()}}
                                 href={config.privacyPolicy}
                             >
@@ -55,24 +55,15 @@ export default class ConsentModal extends React.Component {
                     </p>
                 </div>
                 
-                <form className="dialog__body">
-                    <div className={ns('Modal-body')}>
+                <div className="dialog__body">
+                    <form className={ns('form')}>
                         <Apps t={t} ns={ns} config={config} manager={manager} />
-                    </div>
-                    <div className={ns('Modal-footer')}>
-                        <button
-                            className={ns('Button Button--save Modal-saveButton')}
-                            onClick={onSaveRequest}
-                            title={t(['saveData'])}
-                        >
-                            {t(['save'])}
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
 
                 <div className="dialog__footer">
                     <button
-                        className={ns('Button Button--save Modal-saveButton')}
+                        className="button button--primary"
                         onClick={onSaveRequest}
                         title={t(['saveData'])}
                     >

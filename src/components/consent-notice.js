@@ -19,30 +19,32 @@ export default class ConsentNotice extends React.Component {
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
         const title = t(['consentNotice', 'title']);
 
-        return <div aria-hidden={isModalVisible} className={ns(`Notice${isMandatory ? ' Notice--mandatory' : ''}`)}>
-            <div className={ns('Notice-body')}>
-                {config.logo &&
-                    <div className={ns('Notice-logoContainer')}>
-                        <img
-                            src={typeof config.logo == 'object' ? config.logo.src : config.logo}
-                            alt={typeof config.logo == 'object' && config.logo.alt ? config.logo.alt : ''} className={ns('Notice-logo')}
-                        />
-                    </div>
-                }
+        return <div aria-hidden={isModalVisible} className={ns(`notice${isMandatory ? ' notice--mandatory' : ''}`)}>
+            
+            {config.logo &&
+                <div className={ns('notice__logo')}>
+                    <img
+                        src={typeof config.logo == 'object' ? config.logo.src : config.logo}
+                        alt={typeof config.logo == 'object' && config.logo.alt ? config.logo.alt : ''} className={ns('Notice-logo')}
+                    />
+                </div>
+            }
 
-                <div className={ns('Notice-text')}>
+            <div className={ns('notice__body')}>
+
+                <div className={ns('notice__body__text')}>
                     {title &&
-                        <h1 className={ns('Notice-title')} id="orejime-notice-title">{title}</h1>
+                        <h1 className={ns('notice-title')} id="orejime-notice-title">{title}</h1>
                     }
 
-                    <p className={ns('Notice-description')}>
+                    <p className={ns('notice-description')}>
                         {t(['consentNotice', 'description'], {
-                            purposes: <strong key="purposes" className={ns('Notice-purposes')}>{purposesText}</strong>
+                            purposes: <strong key="purposes" className={ns('notice-purposes')}>{purposesText}</strong>
                         })}
                         {t(['consentNotice','privacyPolicy','text'], {
                             privacyPolicy : <a
                                 key="privacyPolicyLink"
-                                className={ns('Notice-privacyPolicyLink')}
+                                className={ns('notice-link')}
                                 href={config.privacyPolicy}
                             >
                                 {t(['consentNotice','privacyPolicy','name'])}
@@ -52,32 +54,32 @@ export default class ConsentNotice extends React.Component {
                 </div>
 
                 {manager.changed &&
-                    <p className={ns('Notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>
+                    <p className={ns('notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>
                 }
 
-                <ul className={ns('Notice-actions')}>
-                    <li className={ns('Notice-actionItem Notice-actionItem--save')}>
+                <ul className={ns('notice__actions')}>
+                    <li className={ns('notice__actions__item notice__actions__item--save')}>
                          <button
-                            className={ns('Button Button--save Notice-button Notice-saveButton')}
+                            className="button button--primary"
                             type="button"
                             onClick={onSaveRequest}
                         >
                             {t(['accept'])}
                         </button>
                     </li>
-                    <li className={ns('Notice-actionItem Notice-actionItem--decline')}>
+                    <li className={ns('notice__actions__item notice__actions__item--decline')}>
                          <button
-                            className={ns('Button Button--decline Notice-button Notice-declineButton')}
+                            className="button button--default"
                             type="button"
                             onClick={onDeclineRequest}
                         >
                             {t(['decline'])}
                         </button>
                     </li>
-                    <li className={ns('Notice-actionItem Notice-actionItem--info')}>
+                    <li className={ns('notice__actions__item notice__actions__item--info')}>
                          <button
                             type="button"
-                            className={ns('Button Button--info Notice-learnMoreButton')}
+                            className="button button--default"
                             onClick={onConfigRequest}
                         >
                             {t(['consentNotice', 'learnMore'])}
