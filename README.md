@@ -23,10 +23,11 @@ Using Orejime 🍪 requires a few steps:
 #### Via CDN
 
 The easiest way to use the lib is to include the built files directly in the browser.
+Build files are located in `node_modules/orejime/dist`. Import theme directly in your JS thanks to webpack, or install it any way you are used to in your project as follow:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/orejime@1.1.1/dist/orejime.css" />
-<script src="https://unpkg.com/orejime@1.1.1/dist/orejime.js"></script>
+<link rel="stylesheet" href="orejime.css" />
+<script src="orejime.js"></script>
 ```
 
 #### Via npm
@@ -34,7 +35,7 @@ The easiest way to use the lib is to include the built files directly in the bro
 Orejime 🍪 is a React lib. Make sure you already installed react and react-dom, then:
 
 ```
-npm install orejime
+npm install git+https://git@github.com/mathieuheliot/orejime.git --save
 ```
 
 The CSS is located in `node_modules/orejime/dist/orejime.css`. Import it directly in your JS thanks to webpack, or install it any way you are used to in your project.  
