@@ -101,8 +101,7 @@ function (_React$Component) {
         parentSelector: function parentSelector() {
           return document.getElementById(config.elementID || 'orejime');
         },
-        htmlOpenClassName: "orejimeHtml-WithModalOpen",
-        bodyOpenClassName: "orejimeBody-WithModalOpen"
+        htmlOpenClassName: "modal-opened"
       }, reactModalProps), children);
     }
   }]);

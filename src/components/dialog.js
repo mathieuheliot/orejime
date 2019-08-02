@@ -64,8 +64,7 @@ export default class Dialog extends React.Component {
 
         return <ReactModal
             parentSelector={() => document.getElementById(config.elementID || 'orejime')}
-            htmlOpenClassName="orejimeHtml-WithModalOpen"
-            bodyOpenClassName="orejimeBody-WithModalOpen"
+            htmlOpenClassName="modal-opened"
             {...reactModalProps}
         >
             {children}

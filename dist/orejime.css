@@ -108,17 +108,7 @@
 .orejime-Notice-learnMoreButton {
   display: inline-block; }
 
-.orejimeHtml-WithModalOpen {
-  height: 100%; }
-
-.orejimeHtml-WithModalOpen body {
-  position: fixed;
-  overflow: hidden;
-  height: 100%;
-  width: 100%; }
-
-.modal,
-.orejime-NoticeOverlay {
+.modal {
   z-index: 1000;
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -126,6 +116,15 @@
   left: 0;
   right: 0;
   bottom: 0; }
+
+.modal-opened {
+  height: 100%; }
+
+.modal-opened body {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
 
 .dialog {
   z-index: 1001;
