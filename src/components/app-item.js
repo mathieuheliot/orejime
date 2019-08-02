@@ -51,7 +51,7 @@ export default class AppItem extends React.Component {
                     {...(required ? {tabIndex: "0"} : {})}
                 >
                     <div className={ns('app-title')}>{title}{requiredText}{optOutText}</div>
-                    <div class="app-description">{description || t([name, 'description'])}</div>
+                    <div className="app-description">{description || t([name, 'description'])}</div>
                     {purposesEl}
                 </label>
             </div>
