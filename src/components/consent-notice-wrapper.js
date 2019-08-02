@@ -22,7 +22,7 @@ export default class ConsentNoticeWrapper extends React.Component {
                 overlayClassName={isVisible ? 'modal modal--drawer visible' : 'modal modal--drawer'}
                 className="drawer"
             >
-                <div class="drawer__body">
+                <div class="drawer__content">
                     <ConsentNotice {...props} />
                 </div>
             </Dialog>
