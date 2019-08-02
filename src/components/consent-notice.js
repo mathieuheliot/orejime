@@ -30,63 +30,60 @@ export default class ConsentNotice extends React.Component {
                 </div>
             }
 
-            <div className={ns('notice__body')}>
-
-                <div className={ns('notice__body__text')}>
-                    {title &&
-                        <h1 className={ns('notice-title')} id="orejime-notice-title">{title}</h1>
-                    }
-
-                    <p className={ns('notice-description')}>
-                        {t(['consentNotice', 'description'], {
-                            purposes: <strong key="purposes" className={ns('notice-purposes')}>{purposesText}</strong>
-                        })}
-                        {t(['consentNotice','privacyPolicy','text'], {
-                            privacyPolicy : <a
-                                key="privacyPolicyLink"
-                                className={ns('notice-link')}
-                                href={config.privacyPolicy}
-                            >
-                                {t(['consentNotice','privacyPolicy','name'])}
-                            </a>
-                        })}
-                    </p>
-                </div>
-
-                {manager.changed &&
-                    <p className={ns('notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>
+            <div className={ns('notice__text')}>
+                {title &&
+                    <h1 className={ns('notice-title')} id="orejime-notice-title">{title}</h1>
                 }
 
-                <ul className={ns('notice__actions')}>
-                    <li className={ns('notice__actions__item notice__actions__item--save')}>
-                         <button
-                            className="button button--primary"
-                            type="button"
-                            onClick={onSaveRequest}
+                <p className={ns('notice-description')}>
+                    {t(['consentNotice', 'description'], {
+                        purposes: <strong key="purposes" className={ns('notice-purposes')}>{purposesText}</strong>
+                    })}
+                    {t(['consentNotice','privacyPolicy','text'], {
+                        privacyPolicy : <a
+                            key="privacyPolicyLink"
+                            className={ns('notice-link')}
+                            href={config.privacyPolicy}
                         >
-                            {t(['accept'])}
-                        </button>
-                    </li>
-                    <li className={ns('notice__actions__item notice__actions__item--decline')}>
-                         <button
-                            className="button button--default"
-                            type="button"
-                            onClick={onDeclineRequest}
-                        >
-                            {t(['decline'])}
-                        </button>
-                    </li>
-                    <li className={ns('notice__actions__item notice__actions__item--info')}>
-                         <button
-                            type="button"
-                            className="button button--default"
-                            onClick={onConfigRequest}
-                        >
-                            {t(['consentNotice', 'learnMore'])}
-                        </button>
-                    </li>
-                </ul>
+                            {t(['consentNotice','privacyPolicy','name'])}
+                        </a>
+                    })}
+                </p>
             </div>
+
+            {manager.changed &&
+                <p className={ns('notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>
+            }
+
+            <ul className={ns('notice__actions')}>
+                <li className={ns('notice__actions__item notice__actions__item--save')}>
+                        <button
+                        className="button button--primary"
+                        type="button"
+                        onClick={onSaveRequest}
+                    >
+                        {t(['accept'])}
+                    </button>
+                </li>
+                <li className={ns('notice__actions__item notice__actions__item--decline')}>
+                        <button
+                        className="button button--default"
+                        type="button"
+                        onClick={onDeclineRequest}
+                    >
+                        {t(['decline'])}
+                    </button>
+                </li>
+                <li className={ns('notice__actions__item notice__actions__item--info')}>
+                        <button
+                        type="button"
+                        className="button"
+                        onClick={onConfigRequest}
+                    >
+                        {t(['consentNotice', 'learnMore'])}
+                    </button>
+                </li>
+            </ul>
         </div>
     }
 }

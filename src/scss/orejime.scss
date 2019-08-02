@@ -64,14 +64,11 @@ $orejime-theme-color-light: #aaa !default;
     width: 100%;
     bottom: 0;
     font-size: 0.8em;   
+    padding: 1em;
 
     &__logo {
         max-width: 200px;
     } 
-
-    &__body {
-        padding: 1em;
-    }
 
     &__actions {
         display: block;

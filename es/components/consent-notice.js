@@ -46,9 +46,7 @@ function (_React$Component) {
         alt: _typeof(config.logo) == 'object' && config.logo.alt ? config.logo.alt : '',
         className: ns('Notice-logo')
       })), React.createElement("div", {
-        className: ns('notice__body')
-      }, React.createElement("div", {
-        className: ns('notice__body__text')
+        className: ns('notice__text')
       }, title && React.createElement("h1", {
         className: ns('notice-title'),
         id: "orejime-notice-title"
@@ -85,9 +83,9 @@ function (_React$Component) {
         className: ns('notice__actions__item notice__actions__item--info')
       }, React.createElement("button", {
         type: "button",
-        className: "button button--default",
+        className: "button",
         onClick: onConfigRequest
-      }, t(['consentNotice', 'learnMore']))))));
+      }, t(['consentNotice', 'learnMore'])))));
     }
   }]);
 
