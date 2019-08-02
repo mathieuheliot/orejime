@@ -83,6 +83,9 @@ export function init(conf) {
         />,
         element
     )
+
+    console.log('🍪 User consents manager Orejime launched')
+
     return {
         show: app.showModal.bind(app),
         internals: {
