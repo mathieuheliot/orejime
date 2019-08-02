@@ -37,7 +37,7 @@ function (_React$Component) {
           'labelledby': 'orejime-modal-title'
         },
         portalClassName: ns('ModalPortal'),
-        overlayClassName: "modal",
+        overlayClassName: isOpen ? 'modal visible' : 'modal',
         className: "dialog",
         config: config,
         onRequestClose: onHideRequest,

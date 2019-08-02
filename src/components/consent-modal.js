@@ -13,7 +13,7 @@ export default class ConsentModal extends React.Component {
             isOpen={isOpen}
             aria={{'labelledby': 'orejime-modal-title'}}
             portalClassName={ns('ModalPortal')}
-            overlayClassName="modal"
+            overlayClassName={isOpen ? 'modal visible' : 'modal'}
             className="dialog"
             config={config}
             onRequestClose={onHideRequest}
