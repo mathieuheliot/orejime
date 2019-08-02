@@ -65,14 +65,6 @@ export default class ConsentModal extends React.Component {
                         >
                             {t(['save'])}
                         </button>
-                        <a
-                            target="_blank"
-                            className={ns('Modal-poweredByLink')}
-                            href={config.poweredBy || 'https://github.com/empreinte-digitale/orejime'}
-                            title={`${t(['poweredBy'])} (${t(['newWindow'])})`}
-                        >
-                            {t(['poweredBy'])}
-                        </a>
                     </div>
                 </form>
             </div>

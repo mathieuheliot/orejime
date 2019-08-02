@@ -68,10 +68,6 @@ if (IS_DEV) {
 if (ACTION === 'start') {
   config.devServer = {
     contentBase: BUILD_DIR,
-    /* compress: true,
-    historyApiFallback: {
-        index: 'index.html' // Tell webpack dev server to serve index.html for any route
-    }, */
     port: 3000
   }
 }
