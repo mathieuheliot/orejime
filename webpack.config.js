@@ -7,6 +7,7 @@ const ACTION = process.env.npm_lifecycle_event;
 
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname,'src');
+var TEST_DIR = path.resolve(__dirname, 'test');
 var IS_DEV = process.env.NODE_ENV === 'development';
 
 var config = {
@@ -67,7 +68,7 @@ if (IS_DEV) {
 
 if (ACTION === 'start') {
   config.devServer = {
-    contentBase: BUILD_DIR,
+    contentBase: TEST_DIR,
     port: 3000
   }
 }

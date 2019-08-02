@@ -12,15 +12,14 @@
     "gdpr",
     "compliance"
   ],
-  "main": "index.js",
+  "main": "lib/orejime.js",
+  "module": "es/orejime.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "cjs": "cross-env BABEL_ENV=cjs babel --out-dir lib src",
     "es": "cross-env BABEL_ENV=es babel --out-dir es src",
-    "umd": "cross-env BABEL_ENV=umd webpack",
-    "copy-scss": "cp src/scss/orejime.scss dist/orejime.scss",
-    "build": "npm run clean-build && npm run cjs && npm run es && cross-env NODE_ENV=production npm run umd && npm run copy-scss",
-    "clean-build": "rm -Rf ./dist/orejime.{js,css,scss} && rm -Rf ./lib && rm -Rf ./es",
+    "umd": "cross-env BABEL_ENV=umd webpack --progress",
+    "build": "npm run cjs && npm run es && cross-env NODE_ENV=production npm run umd",
     "prepublishOnly": "npm run build"
   },
   "author": "Mathieu Héliot <mathieu.heliot@gmail.com>",
