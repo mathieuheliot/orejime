@@ -71,7 +71,7 @@ function (_React$Component) {
       } : {}), React.createElement("div", {
         className: ns('app-title')
       }, title, requiredText, optOutText), React.createElement("div", {
-        class: "app-description"
+        className: "app-description"
       }, description || t([name, 'description'])), purposesEl)));
     }
   }]);

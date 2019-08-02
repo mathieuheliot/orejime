@@ -20,18 +20,20 @@ export default class ConsentModal extends React.Component {
             role={isAlert ? 'alertdialog' : 'dialog'}
         >
 
+            {!isAlert &&
+                <div className="dialog__close">
+                    <button
+                        title={t(['close'])}
+                        className={ns('modal-close')}
+                        type="button"
+                        onClick={onHideRequest}
+                    >Close</button>
+                </div>
+            }
+
             <div className="dialog__content">
 
-                <div className={'dialog__header'}>
-                    {!isAlert &&
-                        <button
-                            title={t(['close'])}
-                            className={ns('modal-close')}
-                            type="button"
-                            onClick={onHideRequest}
-                        >Close</button>
-                    }
-
+                <div className="dialog__header">
                     <h1 className={ns('modal-title')} id="orejime-modal-title">{t(['consentModal', 'title'])}</h1>
                     <p className={ns('modal-description')}>
                         {manager.changed && (config.mustConsent || config.noNotice) &&

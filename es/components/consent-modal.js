@@ -42,16 +42,18 @@ function (_React$Component) {
         config: config,
         onRequestClose: onHideRequest,
         role: isAlert ? 'alertdialog' : 'dialog'
-      }, React.createElement("div", {
-        className: "dialog__content"
-      }, React.createElement("div", {
-        className: 'dialog__header'
-      }, !isAlert && React.createElement("button", {
+      }, !isAlert && React.createElement("div", {
+        className: "dialog__close"
+      }, React.createElement("button", {
         title: t(['close']),
         className: ns('modal-close'),
         type: "button",
         onClick: onHideRequest
-      }, "Close"), React.createElement("h1", {
+      }, "Close")), React.createElement("div", {
+        className: "dialog__content"
+      }, React.createElement("div", {
+        className: "dialog__header"
+      }, React.createElement("h1", {
         className: ns('modal-title'),
         id: "orejime-modal-title"
       }, t(['consentModal', 'title'])), React.createElement("p", {
