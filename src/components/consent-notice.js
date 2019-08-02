@@ -74,16 +74,17 @@ export default class ConsentNotice extends React.Component {
                         {t(['decline'])}
                     </button>
                 </li>
-                <li className={ns('notice__actions__item notice__actions__item--info')}>
-                        <button
-                        type="button"
-                        className="button"
-                        onClick={onConfigRequest}
-                    >
-                        {t(['consentNotice', 'learnMore'])}
-                    </button>
-                </li>
             </ul>
+
+            <div className={ns('notice__settings')}>
+                <button
+                    type="button"
+                    className="button"
+                    onClick={onConfigRequest}
+                >
+                    {t(['consentNotice', 'learnMore'])}
+                </button>
+            </div>
         </div>
     }
 }

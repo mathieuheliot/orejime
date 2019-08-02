@@ -78,6 +78,10 @@ $orejime-theme-color-light: #aaa !default;
         }
     }
 
+    &__settings {
+        margin-top: 10px;
+    }
+
     @media (min-width: 990px) {
         box-shadow: $orejime-box-shadow;
         border-radius: $orejime-border-radius;

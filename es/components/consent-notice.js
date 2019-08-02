@@ -79,13 +79,13 @@ function (_React$Component) {
         className: "button button--default",
         type: "button",
         onClick: onDeclineRequest
-      }, t(['decline']))), React.createElement("li", {
-        className: ns('notice__actions__item notice__actions__item--info')
+      }, t(['decline'])))), React.createElement("div", {
+        className: ns('notice__settings')
       }, React.createElement("button", {
         type: "button",
         className: "button",
         onClick: onConfigRequest
-      }, t(['consentNotice', 'learnMore'])))));
+      }, t(['consentNotice', 'learnMore']))));
     }
   }]);
 

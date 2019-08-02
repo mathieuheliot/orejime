@@ -52,6 +52,8 @@
     display: block; }
     .orejime-notice__actions__item {
       display: inline; }
+  .orejime-notice__settings {
+    margin-top: 10px; }
   @media (min-width: 990px) {
     .orejime-notice {
       box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
