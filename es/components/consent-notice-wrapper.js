@@ -57,7 +57,12 @@ var ConsentNoticeWrapper = /*#__PURE__*/function (_React$Component) {
         }, React.createElement(ConsentNotice, props)));
       }
 
-      return React.createElement(ConsentNotice, props);
+      return React.createElement("dialog", {
+        className: "dialog rgpd-dialog",
+        open: isVisible ? 'open' : false
+      }, React.createElement("div", {
+        className: "dialog__content"
+      }, React.createElement(ConsentNotice, props)));
     }
   }]);
 

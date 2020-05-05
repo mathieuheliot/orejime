@@ -48,6 +48,10 @@ export default class ConsentNotice extends React.Component {
                             {t(['consentNotice','privacyPolicy','name'])}
                         </a>
                     })}
+                    <a class="link"
+                        title={t(['consentNotice', 'learnMore'])}
+                        rel="nofollow"
+                        onClick={onConfigRequest}>{t(['consentNotice', 'learnMore'])}</a>
                 </p>
             </div>
 
@@ -67,7 +71,7 @@ export default class ConsentNotice extends React.Component {
                 </li>
                 <li className={ns('notice__actions__item notice__actions__item--decline')}>
                         <button
-                        className="button button--default"
+                        className="button"
                         type="button"
                         onClick={onDeclineRequest}
                     >
@@ -75,16 +79,6 @@ export default class ConsentNotice extends React.Component {
                     </button>
                 </li>
             </ul>
-
-            <div className={ns('notice__settings')}>
-                <button
-                    type="button"
-                    className="button"
-                    onClick={onConfigRequest}
-                >
-                    {t(['consentNotice', 'learnMore'])}
-                </button>
-            </div>
         </div>
     }
 }

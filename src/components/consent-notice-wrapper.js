@@ -27,6 +27,10 @@ export default class ConsentNoticeWrapper extends React.Component {
                 </div>
             </Dialog>
         }
-        return <ConsentNotice {...props} />
+        return <dialog className="dialog rgpd-dialog" open={isVisible ? 'open' : false}>
+            <div className="dialog__content">
+                <ConsentNotice {...props} />
+            </div>
+        </dialog>
     }
 }

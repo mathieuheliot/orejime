@@ -68,7 +68,12 @@ var ConsentNotice = /*#__PURE__*/function (_React$Component) {
           className: ns('notice-link'),
           href: config.privacyPolicy
         }, t(['consentNotice', 'privacyPolicy', 'name']))
-      }))), manager.changed && React.createElement("p", {
+      }), React.createElement("a", {
+        class: "link",
+        title: t(['consentNotice', 'learnMore']),
+        rel: "nofollow",
+        onClick: onConfigRequest
+      }, t(['consentNotice', 'learnMore'])))), manager.changed && React.createElement("p", {
         className: ns('notice-changes')
       }, t(['consentNotice', 'changeDescription'])), React.createElement("ul", {
         className: ns('notice__actions')
@@ -81,16 +86,10 @@ var ConsentNotice = /*#__PURE__*/function (_React$Component) {
       }, t(['accept']))), React.createElement("li", {
         className: ns('notice__actions__item notice__actions__item--decline')
       }, React.createElement("button", {
-        className: "button button--default",
+        className: "button",
         type: "button",
         onClick: onDeclineRequest
-      }, t(['decline'])))), React.createElement("div", {
-        className: ns('notice__settings')
-      }, React.createElement("button", {
-        type: "button",
-        className: "button",
-        onClick: onConfigRequest
-      }, t(['consentNotice', 'learnMore']))));
+      }, t(['decline'])))));
     }
   }]);
 
