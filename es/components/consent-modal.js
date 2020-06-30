@@ -43,7 +43,7 @@ var ConsentModal = /*#__PURE__*/function (_React$Component) {
         },
         portalClassName: ns('ModalPortal'),
         overlayClassName: isOpen ? 'modal visible' : 'modal',
-        className: "dialog",
+        className: "dialog dialog--modal",
         config: config,
         onRequestClose: onHideRequest,
         role: isAlert ? 'alertdialog' : 'dialog'
